@@ -1,0 +1,95 @@
+/* استفاده از فونت مینیمال انگلیسی */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    min-height: 100vh; /* حداقل ارتفاع صفحه */
+    display: flex;
+    flex-direction: column; /* چینش به صورت ستونی */
+}
+
+.wrapper {
+    flex: 1; /* بخش اصلی صفحه */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* فاصله بین محتوای اصلی و فوتر */
+}
+
+.container {
+    display: flex;
+    max-width: 800px;
+    margin: 50px auto;
+    gap: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.left, .right {
+    flex: 1;
+    padding: 20px;
+}
+
+.left h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.left p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.right h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+form input, form button {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-align: left;
+}
+
+form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* استایل برای Footer */
+footer {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #f1f1f1; /* رنگ طوسی */
+    font-size: 0.8rem;
+    color: #555;
+    border-top: 1px solid #ddd;
+    width: 100%; /* عرض کامل */
+    margin: 0 auto; /* قرار دادن در مرکز صفحه */
+    border-radius: 8px; /* گرد کردن گوشه‌ها (اختیاری) */
+}
