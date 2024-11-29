@@ -8,85 +8,65 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-}
-
-/* استایل کانتینر اصلی */
-.wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center; /* وسط‌چین کردن محتوا */
-    padding: 20px;
 }
 
-/* کانتینر فرم و متن */
+/* کانتینر کلی */
 .container {
     display: flex;
-    max-width: 800px;
-    width: 100%; /* تمام عرض صفحه */
+    flex-direction: row; /* پیش‌فرض دسکتاپ */
+    max-width: 800px; /* محدود کردن عرض کلی */
+    width: 95%; /* تطبیق با صفحه‌های کوچک‌تر */
     margin: 20px auto;
     gap: 20px;
     padding: 20px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap; /* شکستن محتوا برای موبایل */
-}
-
-/* ستون‌های چپ و راست */
-.left, .right {
-    flex: 1;
-    padding: 15px;
-    min-width: 300px; /* حداقل عرض ستون‌ها */
     box-sizing: border-box;
 }
 
+/* ستون‌ها */
+.left, .right {
+    flex: 1; /* هر دو ستون به نسبت برابر فضا می‌گیرند */
+    min-width: 300px; /* جلوگیری از کوچکتر شدن بیش از حد */
+    padding: 15px;
+}
+
+/* متن ستون چپ */
 .left h1 {
-    color: #333;
     font-size: 1.8rem;
+    text-align: center; /* وسط‌چین کردن متن */
     margin-bottom: 10px;
-    text-align: center;
 }
 
 .left p {
     font-size: 1rem;
+    text-align: center;
     line-height: 1.6;
-    margin-bottom: 15px;
-    text-align: center;
 }
 
-.right h2 {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-    color: #007bff;
-    text-align: center;
-}
-
-/* فرم */
+/* ستون راست: فرم */
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    align-items: center;
 }
 
 form input, form button {
     width: 100%;
-    max-width: 100%; /* عرض تطبیقی */
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
-    text-align: left;
 }
 
 form button {
     background-color: #007bff;
-    color: #fff;
+    color: white;
     border: none;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 form button:hover {
@@ -104,32 +84,32 @@ footer {
     width: 100%;
 }
 
-/* Media Queries برای موبایل */
+/* استایل موبایل */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column; /* چینش عمودی در موبایل */
-        max-width: 95%; /* کاهش عرض کانتینر */
-        padding: 15px;
+        flex-direction: column; /* تغییر به حالت ستونی */
+        padding: 15px; /* کاهش فضای داخلی */
     }
 
     .left, .right {
-        padding: 10px; /* کاهش فضای داخلی */
-        text-align: center; /* وسط‌چین کردن محتوا */
+        min-width: unset; /* حذف محدودیت عرض */
+        padding: 10px;
     }
 
     .left h1 {
-        font-size: 1.5rem; /* کاهش اندازه فونت تیتر */
+        font-size: 1.5rem; /* کاهش اندازه تیتر */
     }
 
     .left p {
-        font-size: 0.9rem; /* کاهش اندازه فونت متن */
+        font-size: 0.9rem;
     }
 
-    .right h2 {
-        font-size: 1.2rem; /* کاهش اندازه فونت تیتر فرم */
+    form input, form button {
+        font-size: 0.9rem;
     }
 
     footer {
-        font-size: 0.7rem; /* کاهش اندازه متن فوتر */
+        font-size: 0.7rem;
+        padding: 5px;
     }
 }
