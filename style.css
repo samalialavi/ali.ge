@@ -26,6 +26,7 @@ body {
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* در صورت نیاز به چند خط تبدیل شود */
 }
 
 .left, .right {
@@ -92,4 +93,40 @@ footer {
     width: 100%; /* عرض کامل */
     margin: 0 auto; /* قرار دادن در مرکز صفحه */
     border-radius: 8px; /* گرد کردن گوشه‌ها (اختیاری) */
+}
+
+/* Media Queries برای موبایل */
+@media (max-width: 768px) {
+    .container {
+        max-width: 95%; /* عرض کانتینر متناسب با صفحه موبایل */
+        margin: 20px auto; /* فاصله کمتر */
+        padding: 15px; /* کاهش پدینگ */
+        flex-direction: column; /* ستون‌بندی به جای ردیف‌بندی */
+    }
+
+    .left, .right {
+        padding: 10px; /* کاهش فاصله داخلی */
+        flex: unset; /* حذف نسبت برای نمایش بهتر */
+    }
+
+    .left h1 {
+        font-size: 1.5rem; /* کاهش اندازه فونت */
+    }
+
+    .left p {
+        font-size: 0.9rem; /* کوچک‌تر کردن متن */
+    }
+
+    .right h2 {
+        font-size: 1.2rem; /* کاهش اندازه فونت */
+    }
+
+    form input, form button {
+        max-width: 100%; /* استفاده از تمام عرض صفحه */
+    }
+
+    footer {
+        font-size: 0.7rem; /* کوچک‌تر کردن اندازه متن فوتر */
+        padding: 5px 10px; /* کاهش پدینگ فوتر */
+    }
 }
